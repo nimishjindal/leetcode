@@ -1,8 +1,10 @@
+package permutations_46;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-class Solution {
+public class Solution {
 
     boolean[] visited;
     int[] nums;
