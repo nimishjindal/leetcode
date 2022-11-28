@@ -1,8 +1,9 @@
-import Unique_Paths_62.Solution;
+import Set_Matrix_Zeroes_73.Solution;
 
 public class Sample {
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.uniquePaths(23, 12));
+        int[][] matrix = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
+        s.setZeroes(matrix);
     }
 }
