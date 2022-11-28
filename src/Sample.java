@@ -1,9 +1,9 @@
-import Set_Matrix_Zeroes_73.Solution;
+import Sort_Colors_75.Solution;
 
 public class Sample {
     public static void main(String[] args) {
         Solution s = new Solution();
-        int[][] matrix = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
-        s.setZeroes(matrix);
+        int[] matrix = {2, 0, 2, 1, 1, 0};
+        s.sortColors(matrix);
     }
 }
