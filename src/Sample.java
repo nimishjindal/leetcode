@@ -1,9 +1,9 @@
-import Sort_Colors_75.Solution;
+import Subsets_78.Solution;
 
 public class Sample {
     public static void main(String[] args) {
         Solution s = new Solution();
-        int[] matrix = {2, 0, 2, 1, 1, 0};
-        s.sortColors(matrix);
+        int[] matrix = {1, 2, 3};
+        s.subsets(matrix);
     }
 }
