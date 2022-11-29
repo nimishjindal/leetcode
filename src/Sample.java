@@ -1,8 +1,9 @@
-import Decode_Ways_91.Solution;
+import Gas_Station_134.Solution;
 
 public class Sample {
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.numDecodings("111111111111111111111111111111111111111111111"));
+        int[] gas = {1,2,3,4,5}, cost = {3,4,5,1,2};
+        System.out.println(s.canCompleteCircuit(gas, cost));
     }
 }
