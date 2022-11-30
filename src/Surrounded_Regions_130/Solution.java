@@ -2,7 +2,6 @@ package Surrounded_Regions_130;
 
 public class Solution {
 
-    boolean[][] visited;
     char[][] board;
     int m, n;
 
@@ -13,7 +12,6 @@ public class Solution {
         n = board[0].length;
         this.board = board;
 
-        visited = new boolean[m][n];
         for (int i = 0; i < m; i++) {
             visit(i, 0);
             visit(i, n - 1);
@@ -34,22 +32,14 @@ public class Solution {
     }
 
     private void visit(int i, int j) {
-        if (board[i][j] == O && !visited[i][j])
-            mark(i, j);
+        if (board[i][j] == O) mark(i, j);
     }
 
-    private void mark(int i, int j) { // not blocked = 'N'
-        if (isOutOfBounds(i, j) || visited[i][j])
+    private void mark(int i, int j) {
+        if (isOutOfBounds(i, j) || board[i][j] != O)
             return;
 
-        visited[i][j] = true;
-
-        if (board[i][j] == X)
-            return;
-
-        if (board[i][j] == O)
-            board[i][j] = N;
-
+        board[i][j] = N;
         mark(i - 1, j);
         mark(i + 1, j);
         mark(i, j - 1);
