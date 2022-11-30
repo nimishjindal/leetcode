@@ -1,16 +1,9 @@
-import Surrounded_Regions_130.Solution;
+import Unique_Number_Occurrences_1207.Solution;
 
 public class Sample {
     public static void main(String[] args) {
         Solution s = new Solution();
-        char[][] board = {
-                {'O','O','O','O','X','X'},
-                {'O','O','O','O','O','O'},
-                {'O','X','O','X','O','O'},
-                {'O','X','O','O','X','O'},
-                {'O','X','O','X','O','O'},
-                {'O','X','O','O','O','O'}
-        };
-        s.solve(board);
+        int[] board = {1,2,2,1,1,3};
+        System.out.println(s.uniqueOccurrences(board));
     }
 }
