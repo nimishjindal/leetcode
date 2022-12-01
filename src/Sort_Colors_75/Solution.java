@@ -2,22 +2,22 @@ package Sort_Colors_75;
 
 public class Solution {
 
-    private final int RED = 0, WHITE = 1;
+    private final int RED = 0, BLUE = 2;
 
     public void sortColors(int[] nums) {
-        int r = -1;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == RED) {
-                r++;
-                swap(nums, i, r);
+        int low = 0, mid = 0, high = nums.length - 1;
+
+        while (mid <= high) {
+            int curr = nums[mid];
+            if (curr == RED) {
+                swap(nums, mid, low);
+                low++;
+            } else if (curr == BLUE) {
+                swap(nums, mid, high);
+                high--;
+                mid--;
             }
-        }
-        int w = r;
-        for (int i = r+1; i < nums.length; i++) {
-            if (nums[i] == WHITE) {
-                w++;
-                swap(nums, i, w);
-            }
+            mid++;
         }
     }
 
