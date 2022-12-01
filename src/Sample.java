@@ -1,8 +1,9 @@
-import Sort_Colors_75.Solution;
+import Palindrome_Partitioning_131.Solution;
 
 public class Sample {
     public static void main(String[] args) {
         Solution s = new Solution();
-        s.sortColors(new int[]{2,0,1});
+        s.partition("aab");
+        System.out.println("abcd".substring(0,0));
     }
 }
