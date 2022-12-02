@@ -1,24 +1,31 @@
 package top_k_347;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.*;
 
 public class Solution {
     public int[] topKFrequent(int[] nums, int k) {
+
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i : nums) {
             int freq = map.getOrDefault(i, 0);
             map.put(i, freq + 1);
         }
-        List<Integer> l = map
-                .keySet().stream()
-                .sorted((key1, key2) -> map.get(key2) - map.get(key1))
-                .limit(k)
-                .collect(Collectors.toList());
-        int[] res = new int[k];
-        for (int i = 0; i < k; i++)
-            res[i] = l.get(i);
-        return res;
+        ArrayList<Integer>[] sortedFreq = new ArrayList[nums.length + 1];
+
+        map.forEach((num, freq) -> {
+            ArrayList<Integer> temp = sortedFreq[freq] != null ? sortedFreq[freq] : new ArrayList<>();
+            temp.add(num);
+            sortedFreq[freq] = temp;
+        });
+
+        int[] sol = new int[k];
+        int j = 0;
+        for (int i = nums.length; i >= 0 && j < k; i--) {
+            List<Integer> lst = sortedFreq[i];
+            if (lst != null)
+                for (int x = 0; x < lst.size() && j < k; x++)
+                    sol[j++] = lst.get(x);
+        }
+        return sol;
     }
 }
