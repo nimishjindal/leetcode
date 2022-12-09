@@ -1,9 +1,12 @@
-import Maximum_Subarray_53.Solution;
+import Merge_Sorted_Array_88.Solution;
 
 public class Sample {
     public static void main(String[] args) {
         Solution s = new Solution();
         int[] arr = {1};
-        System.out.println(s.maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
+        s.merge(
+                new int[]{1,2,3,0,0,0}, 3,
+                new int[]{2,5,6}, 3
+        );
     }
 }
