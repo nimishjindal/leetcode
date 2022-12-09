@@ -1,12 +1,10 @@
-import Intersection_of_Arrays_II_350.Solution;
+import Buy_Sell_Stock_121.Solution;
 
 public class Sample {
     public static void main(String[] args) {
         Solution s = new Solution();
         int[] arr = {1};
-        s.intersect(
-                new int[]{1, 2, 3, 3, 3, 5},
-                new int[]{1, 2, 3, 5, 6}
-        );
+        s.maxProfit(new int[]{7,1,5,3,6,4});
+        //s.maxProfit(new int[]{1,4,2});
     }
 }
