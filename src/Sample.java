@@ -1,9 +1,9 @@
-import Non_overlapping_Intervals_435.Solution;
+import First_Last_Pos_of_Elem_Sorted_Arr_34.Solution;
 
 public class Sample {
     public static void main(String[] args) {
         Solution s = new Solution();
-        int[][] matrix = {{1, 2}, {2, 3}, {3, 4}, {1, 3}};
-        s.eraseOverlapIntervals(matrix);
+        int[] matrix = {2,2};
+        s.searchRange(matrix, 3);
     }
 }
