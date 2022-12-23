@@ -4,15 +4,16 @@ public class Solution {
 
     public int rob(int[] nums) {
         int n = nums.length;
-        int[] dp = new int[n];
-        dp[0] = nums[0];
+        int prev = nums[0];
+        int max = 0;
+        int prevPrev = 0;
         for (int pos = 1; pos < n; pos++) {
-            int take = nums[pos];
-            if (pos - 2 >= 0)
-                take += dp[pos - 2];
-            int notTake = dp[pos - 1];
-            dp[pos] = Math.max(take, notTake);
+            int take = nums[pos] + prevPrev;
+            int notTake = prev;
+            max = Math.max(take, notTake);
+            prevPrev = prev;
+            prev = max;
         }
-        return dp[n - 1];
+        return prev;
     }
 }
