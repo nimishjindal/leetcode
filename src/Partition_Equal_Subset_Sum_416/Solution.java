@@ -1,8 +1,6 @@
 package Partition_Equal_Subset_Sum_416;
 
-import java.util.Arrays;
-
-public class Solution {
+class Solution {
     public boolean canPartition(int[] nums) {
         int sum = 0;
         for (int i : nums) sum += i;
@@ -10,26 +8,21 @@ public class Solution {
         if (sum % 2 != 0)
             return false;
 
-        int[][] dp = new int[nums.length][(sum / 2) + 1];
+        int target = sum / 2;
+        boolean[][] dp = new boolean[nums.length][sum + 1];
 
-        for (int[] arr : dp)
-            Arrays.fill(arr, -1);
+        for (int i = 0; i < nums.length; i++)
+            dp[i][0] = true;
+        dp[0][nums[0]] = true;
 
-        return canPartition(nums, nums.length - 1, sum / 2, dp);
-    }
+        for (int i = 1; i < nums.length; i++) {
+            for (int t = 1; t <= target; t++) {
+                boolean take = t >= nums[i] && dp[i - 1][t - nums[i]];
+                boolean noTake = dp[i - 1][t];
+                dp[i][t] = take | noTake;
+            }
+        }
 
-    public boolean canPartition(int[] nums, int i, int target, int[][] dp) {
-        if (i == 0)
-            return target == 0;
-        if (target < 0)
-            return false;
-        if (dp[i][target] != -1)
-            return dp[i][target] == 1;
-        boolean take = canPartition(nums, i - 1, target - nums[i], dp);
-        boolean noTake = canPartition(nums, i - 1, target, dp);
-
-        boolean ans = take | noTake;
-        dp[i][target] = ans ? 1 : 0;
-        return ans;
+        return dp[nums.length - 1][target];
     }
 }
