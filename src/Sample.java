@@ -1,9 +1,8 @@
-import PartitionMiniSumDiff_2035.Solution;
+import Count_Sorted_Vowel_Strings_1641.Solution;
 
 public class Sample {
     public static void main(String[] args) {
         Solution s = new Solution();
-        int[] matrix = {3,9,7,3};
-        s.minimumDifference(matrix);
+        System.out.println(s.countVowelStrings(2));
     }
 }
