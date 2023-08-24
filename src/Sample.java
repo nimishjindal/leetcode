@@ -1,9 +1,10 @@
-import Count_Sorted_Vowel_Strings_1641.Solution;
+import Partition_Array_Max_sum_1043.Solution;
 
 public class Sample {
     public static void main(String[] args) {
         Solution s = new Solution();
-        for (int i=1;i<=6;i++)
-            System.out.println(s.countVowelStrings(i));
+        int[] arr = {1, 15, 7, 9, 2, 5, 10};
+        int k = 3;
+        System.out.println(s.maxSumAfterPartitioning(arr, k));
     }
 }
