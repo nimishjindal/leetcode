@@ -5,6 +5,7 @@ public class Sample {
         Solution s = new Solution();
         int[] arr = {1, 15, 7, 9, 2, 5, 10};
         int k = 3;
-        System.out.println(s.twoEggDrop(2));
+        System.out.println(s.twoEggDrop(100));
+        System.out.println(s.twoEggDropOG(100));
     }
 }
